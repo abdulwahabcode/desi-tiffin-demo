@@ -132,6 +132,19 @@
 }
 .wa-float svg, .float-wa svg{width:29px !important; height:29px !important; fill:#fff}
 </style>
+
+<style>
+/* Root-cause fix 2026-10-21: header container ki side padding override ho rahi thi — header kinaron se chipakta tha */
+header .wrap{padding-left:20px;padding-right:20px}
+</style>
+
+<style>
+@media (max-width:680px){
+  header .brand-name{font-size:.9rem !important}
+  header .btn.small{padding:9px 11px !important;font-size:.8rem !important}
+  header .brand-mark{width:38px !important;height:38px !important}
+}
+</style>
 </head>
 <body>
 
