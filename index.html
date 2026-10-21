@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desi Tiffin by Atti — Homemade Pakistani Meals, Ferndale Perth</title>
+<meta name="description" content="Fresh, homemade, halal Desi meals in Ferndale, Perth. Daily rotating menus, pre-order on WhatsApp, pickup only.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F1E5; --paper-2:#F1E8D5; --ink:#26302A; --ink-soft:#5A665E;
+    --green:#173F2C; --green-deep:#0E2A1E; --brass:#B08B57; --brass-soft:#C9A96F;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;overflow-x:hidden}
+  img{display:block;max-width:100%}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  h1,h2,h3{font-family:'Fraunces',serif;line-height:1.12;font-weight:600}
+
+  /* top strip */
+  .strip{background:var(--green-deep);color:#EDE6D2;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;text-align:center;padding:9px 14px}
+  .strip b{color:#D9B77C;font-weight:700}
+
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:rgba(247,241,229,.94);backdrop-filter:blur(8px);border-bottom:1px solid #E3D9C2}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:12px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand-mark{width:44px;height:44px;border-radius:50%;background:var(--green);color:#F3E9CF;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:1.25rem;font-weight:700;border:2px solid var(--brass)}
+  .brand-name{font-family:'Fraunces',serif;font-size:1.28rem;font-weight:700;color:var(--green-deep);line-height:1.1}
+  .brand-sub{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);font-weight:700}
+  .nav-links{display:none;gap:26px;font-weight:600;font-size:.92rem;color:var(--ink-soft)}
+  .nav-links a:hover{color:var(--green)}
+  .btn{display:inline-flex;align-items:center;gap:9px;background:var(--green);color:#F5EFDD;font-weight:700;padding:12px 22px;border-radius:999px;font-size:.95rem;transition:.25s;border:1px solid var(--green)}
+  .btn:hover{background:var(--green-deep);transform:translateY(-1px)}
+  .btn.brass{background:var(--brass);border-color:var(--brass);color:#FFF9EC}
+  .btn.brass:hover{background:#9C7748}
+  .btn.small{padding:9px 18px;font-size:.88rem}
+  @media(min-width:820px){.nav-links{display:flex}}
+
+  /* hero */
+  .hero{padding:56px 0 30px;position:relative}
+  .hero-grid{display:grid;gap:34px;align-items:center}
+  @media(min-width:920px){.hero-grid{grid-template-columns:1.05fr .95fr}}
+  .kicker{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--brass);border:1px solid #DCC79B;padding:7px 14px;border-radius:999px;margin-bottom:20px;background:#FBF7EC}
+  .hero h1{font-size:clamp(2.4rem,6vw,3.9rem);color:var(--green-deep)}
+  .hero h1 em{font-style:italic;color:var(--brass)}
+  .hero p.lead{margin:20px 0 26px;font-size:1.08rem;color:var(--ink-soft);max-width:34rem}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .hero-note{font-size:.85rem;color:var(--ink-soft);margin-top:14px}
+  .hero-photo{position:relative}
+  .hero-photo img{border-radius:22px;aspect-ratio:4/4.6;object-fit:cover;width:100%;box-shadow:0 24px 50px rgba(14,42,30,.22)}
+  @media(min-width:920px){.hero-photo img{aspect-ratio:4/4.4}}
+  .stamp{position:absolute;right:-8px;top:-16px;width:104px;height:104px;border-radius:50%;background:var(--brass);color:#FFF7E6;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:800;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;transform:rotate(10deg);border:2px dashed rgba(255,247,230,.65);box-shadow:0 10px 24px rgba(14,42,30,.25)}
+  .stamp span{font-family:'Fraunces',serif;font-size:1.05rem;letter-spacing:0;text-transform:none}
+  .badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
+  .badge{font-size:.8rem;font-weight:700;background:#FBF7EC;border:1px solid #E0D3B2;color:var(--green);padding:7px 13px;border-radius:999px}
+
+  /* marquee */
+  .marquee{background:var(--green);color:#EFE7CE;overflow:hidden;padding:13px 0;margin:44px 0 0;transform:rotate(-.6deg) scale(1.02)}
+  .marquee-track{display:flex;gap:44px;white-space:nowrap;font-family:'Fraunces',serif;font-size:1.05rem;animation:scroll 30s linear infinite;width:max-content}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+  .marquee i{color:var(--brass);font-style:normal}
+
+  /* sections */
+  section{padding:64px 0}
+  .sec-head{max-width:640px;margin-bottom:36px}
+  .sec-head .kicker{margin-bottom:14px}
+  .sec-head h2{font-size:clamp(1.8rem,4vw,2.5rem);color:var(--green-deep)}
+  .sec-head p{color:var(--ink-soft);margin-top:12px}
+
+  /* menu */
+  .menu-grid{display:grid;gap:22px}
+  @media(min-width:860px){.menu-grid{grid-template-columns:1fr 1fr;gap:26px 48px}}
+  .dish{display:flex;gap:16px;background:#FCF9F0;border:1px solid #E7DCC0;border-radius:16px;padding:16px;align-items:center}
+  .dish img{width:86px;height:86px;border-radius:12px;object-fit:cover;flex:none}
+  .dish h3{font-size:1.12rem;color:var(--green-deep)}
+  .dish p{font-size:.88rem;color:var(--ink-soft)}
+  .dish .tag{margin-left:auto;flex:none;font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--green);color:#F0E8CF;padding:5px 9px;border-radius:6px;align-self:flex-start}
+  .dish .tag.alt{background:var(--brass)}
+  .menu-note{margin-top:26px;background:var(--paper-2);border:1px dashed #CBB27F;border-radius:14px;padding:18px 20px;font-size:.95rem;color:var(--ink-soft)}
+  .menu-note b{color:var(--green-deep)}
+
+  /* steps */
+  .steps{background:var(--green-deep);color:#EDE6D2;border-radius:28px;padding:46px 30px}
+  .steps h2{color:#F5EFDD;font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:8px}
+  .steps>p{color:#CFC7A9;margin-bottom:32px;max-width:36rem}
+  .step-grid{display:grid;gap:26px}
+  @media(min-width:860px){.step-grid{grid-template-columns:repeat(3,1fr)}}
+  .step{border-top:2px solid rgba(217,183,124,.4);padding-top:18px}
+  .step .num{font-family:'Fraunces',serif;font-size:2rem;color:#D9B77C}
+  .step h3{color:#F5EFDD;font-size:1.15rem;margin:6px 0 8px}
+  .step p{font-size:.92rem;color:#CFC7A9}
+
+  /* gallery */
+  .gal{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(min-width:860px){.gal{grid-template-columns:repeat(4,1fr)}}
+  .gal img{border-radius:16px;aspect-ratio:1/1.15;object-fit:cover;width:100%}
+  .gal figure{position:relative}
+  .gal figcaption{position:absolute;left:10px;bottom:10px;background:rgba(14,42,30,.85);color:#F3ECD6;font-size:.75rem;font-weight:700;padding:5px 10px;border-radius:999px}
+
+  /* cta */
+  .cta{background:var(--green);border-radius:28px;padding:52px 30px;text-align:center;color:#EFE7CE}
+  .cta h2{color:#FFF8E7;font-size:clamp(1.9rem,4.5vw,2.6rem)}
+  .cta p{max-width:32rem;margin:14px auto 28px;color:#DAD2B2}
+  .cta .btn{background:#F5EFDD;color:var(--green-deep);border-color:#F5EFDD;font-size:1.02rem;padding:15px 30px}
+  .cta .btn:hover{background:#fff}
+  .cta small{display:block;margin-top:16px;color:#BDB48F;font-size:.82rem}
+
+  footer{padding:38px 0 46px;color:var(--ink-soft);font-size:.88rem}
+  .foot{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;border-top:1px solid #E3D9C2;padding-top:24px}
+  footer b{color:var(--green-deep);font-family:'Fraunces',serif}
+  .float-wa{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#1FA855;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px rgba(14,42,30,.35)}
+  .float-wa svg{width:30px;height:30px;fill:#fff}
+</style>
+</head>
+<body>
+
+<div class="strip">Fresh <b>•</b> Homemade <b>•</b> Desi <b>•</b> Halal — Ferndale, Perth WA</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#">
+      <span class="brand-mark">A</span>
+      <span><span class="brand-name">Desi Tiffin by Atti</span><br><span class="brand-sub">Homemade with love</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#menu">This Week's Menu</a>
+      <a href="#how">How It Works</a>
+      <a href="#gallery">From the Kitchen</a>
+    </nav>
+    <a class="btn small" href="https://wa.me/61412912194" target="_blank" rel="noopener">Order on WhatsApp</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker">Perth's homemade Desi tiffin</span>
+      <h1>Ghar jaisa khana, <em>made fresh</em> in Ferndale.</h1>
+      <p class="lead">Real Pakistani home cooking — biryani, qorma, kebabs and kheer — prepared fresh in small batches by Atti. Menus change daily, everything is halal, and every dish is made the way it is made at home.</p>
+      <div class="hero-cta">
+        <a class="btn brass" href="https://wa.me/61412912194" target="_blank" rel="noopener">Pre-Order on WhatsApp</a>
+        <a class="btn" href="#menu" style="background:transparent;color:var(--green)">See This Week's Menu</a>
+      </div>
+      <p class="hero-note">Pre-order only · Pickup from Ferndale · Menu posted fresh every day</p>
+      <div class="badges">
+        <span class="badge">100% Halal</span>
+        <span class="badge">Cooked Fresh Daily</span>
+        <span class="badge">Small-Batch, Homemade</span>
+        <span class="badge">Pickup Only</span>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="stamp"><span>Fresh</span>today</div>
+      <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=1000&q=80&auto=format&fit=crop" alt="Chicken biryani served fresh">
+    </div>
+  </div>
+</div>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Chicken Tikka Biryani <i>✦</i> Mutton Pulao <i>✦</i> Chicken Qorma <i>✦</i> Chapli Kebab <i>✦</i> Shami Kebab <i>✦</i> Kofta Curry <i>✦</i> Kheer <i>✦</i> Fruit Custard <i>✦</i></span>
+    <span>Chicken Tikka Biryani <i>✦</i> Mutton Pulao <i>✦</i> Chicken Qorma <i>✦</i> Chapli Kebab <i>✦</i> Shami Kebab <i>✦</i> Kofta Curry <i>✦</i> Kheer <i>✦</i> Fruit Custard <i>✦</i></span>
+  </div>
+</div>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Rotating daily menu</span>
+      <h2>This week from Atti's kitchen</h2>
+      <p>The menu changes every day — just like home. Here is what has been cooking this week. Message on WhatsApp for today's menu and prices.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="dish">
+        <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&q=75&auto=format&fit=crop" alt="Biryani">
+        <div><h3>Chicken Tikka Biryani</h3><p>Layered, fragrant and properly spicy — the Sunday favourite.</p></div>
+        <span class="tag">Popular</span>
+      </div>
+      <div class="dish">
+        <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&q=75&auto=format&fit=crop" alt="Curry">
+        <div><h3>Chicken Qorma</h3><p>Slow-cooked, rich and homestyle — just like back home.</p></div>
+        <span class="tag alt">Homestyle</span>
+      </div>
+      <div class="dish">
+        <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&q=75&auto=format&fit=crop" alt="Desi dishes">
+        <div><h3>Mutton Pulao &amp; Kofta Curry</h3><p>Tender mutton pulao and hand-rolled koftas in a homestyle gravy.</p></div>
+        <span class="tag">Fresh batch</span>
+      </div>
+      <div class="dish">
+        <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400&q=75&auto=format&fit=crop" alt="Kebabs">
+        <div><h3>Shami &amp; Chapli Kebabs</h3><p>Hand-made kebabs — perfect for the freezer or tonight's table.</p></div>
+        <span class="tag alt">Hand-made</span>
+      </div>
+      <div class="dish">
+        <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=400&q=75&auto=format&fit=crop" alt="Home cooking">
+        <div><h3>Aloo Chicken Cheese Paratha</h3><p>Stuffed, golden and straight off the tawa.</p></div>
+        <span class="tag">Kids love it</span>
+      </div>
+      <div class="dish">
+        <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400&q=75&auto=format&fit=crop" alt="Rice dish">
+        <div><h3>Kheer &amp; Fruit Custard</h3><p>The sweet finish every Desi meal deserves.</p></div>
+        <span class="tag alt">Dessert</span>
+      </div>
+    </div>
+    <div class="menu-note"><b>Good food brings people together.</b> Quantities are limited each day and dishes sell out — pre-order early on WhatsApp to reserve yours.</div>
+  </div>
+</section>
+
+<section id="how" style="padding-top:10px">
+  <div class="wrap">
+    <div class="steps">
+      <h2>How ordering works</h2>
+      <p>Simple, personal and fresh — no apps, no queues, no mass production.</p>
+      <div class="step-grid">
+        <div class="step"><div class="num">01</div><h3>See today's menu</h3><p>Atti posts a fresh menu every day. Check what's cooking and pick your favourites.</p></div>
+        <div class="step"><div class="num">02</div><h3>Pre-order on WhatsApp</h3><p>Send your order on WhatsApp and Atti confirms it personally. Pre-orders only, so nothing is wasted and everything is fresh.</p></div>
+        <div class="step"><div class="num">03</div><h3>Pick up in Ferndale</h3><p>Collect your tiffin from Ferndale, Perth — hot, homemade and ready to serve.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" style="padding-top:16px">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">From the kitchen</span>
+      <h2>Made with love, every single day</h2>
+    </div>
+    <div class="gal">
+      <figure><img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=75&auto=format&fit=crop" alt="Homestyle curry"><figcaption>Homestyle curries</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=600&q=75&auto=format&fit=crop" alt="Kebabs on the grill"><figcaption>Fresh kebabs</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=600&q=75&auto=format&fit=crop" alt="Cooking at home"><figcaption>Cooked at home</figcaption></figure>
+      <figure><img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=75&auto=format&fit=crop" alt="Desi thali"><figcaption>Full Desi flavour</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:6px">
+  <div class="wrap">
+    <div class="cta">
+      <h2>Hungry? Today's menu is waiting.</h2>
+      <p>Message Atti on WhatsApp to see today's fresh menu and reserve your tiffin before it sells out.</p>
+      <a class="btn" href="https://wa.me/61412912194" target="_blank" rel="noopener">WhatsApp 0412 912 194</a>
+      <small>Pre-order only · Pickup: Ferndale, Perth WA · Always open for orders</small>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div><b>Desi Tiffin by Atti</b> — Fresh · Homemade · Desi · Halal</div>
+    <div>Ferndale, Perth WA · WhatsApp: 0412 912 194</div>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/61412912194" target="_blank" rel="noopener" aria-label="Order on WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.3 4 14.9c0 2.6.8 5 2.3 7L4 29l7.3-2.1c1.4.8 3 1.2 4.7 1.2 6.6 0 12-5.3 12-11.9S22.6 3 16 3zm5.9 16.9c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.4-5-1-4.2-1.7-6.9-6-7.1-6.3-.2-.3-1.7-2.3-1.7-4.3s1.1-3 1.5-3.4c.4-.4.8-.5 1.1-.5h.8c.3 0 .6 0 .9.7l1.3 3.1c.1.3.2.6 0 .9l-.6.9-.6.7c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1.9 2 1.2 2.3 1.3.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l3.1 1.5c.3.2.5.3.6.4 0 .1 0 .7-.2 1.2z"/></svg>
+</a>
+
+</body>
+</html>
